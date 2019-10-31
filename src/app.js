@@ -22,24 +22,9 @@ app.use(express.static(publicdir))
 
 app.get('', (req, res) => {
     res.render('index', {
-        title:'Weather',
-        name:'tejal'
+        title:'Weather'
     })
 })
-
-app.get('/help', (req, res) => {
-    res.render('help', {
-        title: 'Help me'
-    })
-})
-
-app.get('/about', (req, res) => {
-    res.render('about', {
-        title : 'About me'
-    })
-})
-
-
 
 app.get('/weather', (req, res) => {
     if(!req.query.address){
@@ -71,9 +56,6 @@ app.get('/weather', (req, res) => {
     })
 
 })
-
-
-
 
 
 app.get('*', (req, res) => {
